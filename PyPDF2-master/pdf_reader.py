@@ -4,9 +4,9 @@ from os.path import isfile, join
 import re
 import sys
 
-REGEX_EMAIL = "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
+REGEX_EMAIL = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 REGEX_TEL = r"^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$"
-
+REGEX_ADDR = "NOT IMPLEMENTED"
 """
 Converts all resume in pdf files into txt files.
 """
@@ -86,11 +86,11 @@ def main(argv):
 	print "2. A path where a user want to store Resumes in .txt files"
 	print "3. A path where a user want to store Resumes in .txt files without personal information."
 	if len(argv) != 3:
-		form_name_set()
+		#form_name_set()
 		pdf_to_text()
 		txt_to_no_personal()
 	else:
-		form_name_set()
+		#form_name_set()
 		pdf_to_text(argv[0], argv[1])
 		txt_to_no_personal(argv[1], argv[2])
 
